@@ -1,0 +1,47 @@
+.index {
+    height: 100%;
+    width: 100%;
+    .header {
+        height: 60px;
+        width: 100%;
+        line-height: 60px;
+        background-color: #178dff;
+    }
+
+    .item-body {
+        height: calc(~"100% - 100px");
+        width: 100%;
+        background-color: #f5f7f9;
+        padding: 20px;
+    }
+    
+    .menu {
+        height: 40px;
+        width: 100%;
+        display: flex;
+        line-height: 40px;
+        .menu-item {
+            background-color: #ffffff;
+            height: 40px;
+            padding: 0 20px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    }
+
+    .active-index {
+        color: #178dff !important;
+        position: relative;
+
+        &:after {
+            position: absolute;
+            content: '';
+            height: 2px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+            background-color: #178dff;
+        }
+    } 
+}
