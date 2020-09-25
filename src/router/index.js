@@ -16,6 +16,7 @@ import Device from '@/views/device'
 import DeviceGroup from '@/views/deviceGroup'
 import DeviceTree from '@/views/deviceTree'
 import store from '@/reduxer'
+import { setDeviceTree } from '@/actions/systemInfo'
 const hashHistory = createHashHistory();
 const FrontendAuth = () => {
     // const isLogin = true
@@ -45,6 +46,12 @@ const FrontendAuth = () => {
     }
 }
 class MyRoute extends React.Component {
+    componentDidMount() {
+        let isLogin = localStorage.getItem('isLogin')
+        store.dispatch(setDeviceTree({
+            isLogin: isLogin
+        }))
+    }
     render() {
         return (
         <Router>

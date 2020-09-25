@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useReducer, useState } from 'react'
 import reducer from '@/reduxer/index'
 import Todo from '@/reduxer/module/todo'
 import api from '@/api/first'
@@ -7,6 +7,8 @@ const Device = function() {
     const [n, setN] = useState(0)
     const [state] = useReducer(reducer, Todo)
     const obj = {state}
+    const [objs, setObjs] = useState([])
+    // let objs = []
     const onClick = () => {
         setUser({
             ...user,
@@ -18,12 +20,18 @@ const Device = function() {
         setN(i => i + 1)
     }
     useEffect(() => {
-        console.log(obj)
+        // console.log(obj)
         getData()
-    }, [n])
+        // console.log(objs, 111)
+    }, [])
+    useLayoutEffect(() => {
+        console.log(1000)
+    })
     const getData = async () => {
-        let zz = await api.onGetFirstCon()
-        console.log(zz)
+        let zz  = await api.onGetFirstCon()
+        setObjs(Object.values(zz.data.data.res))
+        // objs = Object.values(zz.data.res)
+        // console.log(objs, 222)
     }
     return (
         <div>
@@ -32,6 +40,16 @@ const Device = function() {
             <button onClick={onClick}>Click</button>
             <h1>n: {n}</h1>
             <button onClick={onClickThis}>点击</button>
+            <div>
+                {objs.map((ele, index) => {
+                    return (
+                        <div key={index + ele}>
+                            {ele.name}
+                            {ele.password}
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     )
 }
