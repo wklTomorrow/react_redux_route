@@ -1,0 +1,23 @@
+stages:
+- name: 编译
+  steps:
+  - runScriptConfig:
+      image: fnwharbor.enncloud.cn/fnw/node:10.14.2
+      shellScript: |-
+        yarn install
+        yarn build-rancher-${CICD_GIT_BRANCH}
+- name: 打包镜像
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: fnwharbor.enncloud.cn/fnw/build-model:${CICD_GIT_COMMIT}-${CICD_EXECUTION_ID}
+      pushRemote: true
+      registry: fnwharbor.enncloud.cn
+- name: 查看镜像名
+  steps:
+  - runScriptConfig:
+      image: fnwharbor.enncloud.cn/fnw/alpine:3.2
+      shellScript: echo "docker image name -- fnwharbor.enncloud.cn/fnw/build-model:${CICD_GIT_COMMIT}-${CICD_EXECUTION_ID}"
+timeout: 60
+notification: {}

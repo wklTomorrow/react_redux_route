@@ -1,0 +1,51 @@
+{
+  "name": "msgseal-developer-platform",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serveRelease": "vue-cli-service serve --mode releaseRancher",
+    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve --mode dev",
+    "servetest": "vue-cli-service serve --mode test",
+    "serveprod": "vue-cli-service serve --mode prod",
+    "build-dev": "vue-cli-service build",
+    "build-test": "vue-cli-service build --mode test",
+    "build-prod": "vue-cli-service build --mode prod",
+    "build-master": "vue-cli-service build --mode release",
+    "build-rancher-test": "vue-cli-service build --mode test",
+    "build-rancher-prod": "vue-cli-service build --mode prod",
+    "build-rancher-master": "vue-cli-service build --mode releaseRancher",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@nickyxu/ugmdp": "^0.1.5",
+    "axios": "^0.19.0",
+    "vuedraggable": "^2.24.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.1",
+    "@vue/cli-plugin-eslint": "^3.0.1",
+    "@vue/cli-service": "^3.0.1",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-component": "^1.1.1",
+    "compression-webpack-plugin": "^3.1.0",
+    "copy-webpack-plugin": "^5.0.4",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "vue-cli-plugin-element": "^1.0.1",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "eslintConfig": {},
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
