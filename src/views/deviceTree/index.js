@@ -12,6 +12,7 @@ class DeviceTree extends React.Component {
         }
         this.onDeleteThis.bind(this)
         this.onPostOne.bind(this)
+        this.textInput = React.createRef()
     }
     componentDidMount() {
         this.onGetData()
@@ -76,6 +77,7 @@ class DeviceTree extends React.Component {
                 <button onClick={() => this.onPostOne()}>点我增加一个</button>
                 <button onClick={this.onGetAllFile.bind(this)}>获取文件</button>
                 <div style={{height: '400px', width: '400px'}} id='contain'></div>
+                <input ref={textInput}/>
             </div>
         )
     }
