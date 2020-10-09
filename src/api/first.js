@@ -16,6 +16,15 @@ let obj = {
     },
     onGetFile() {
         return api.get(`${url.API_URL}getFile`)
+    },
+    onGetAllName() {
+        return api.get(`${url.API_URL}getNames`)
+    },
+    onAddOneName(params) {
+        return api.post(`${url.API_URL}getNames`, params)
+    },
+    onDeleteOneById(id) {
+        return api.delete(`${url.API_URL}getNames?id=${id}`)
     }
 }
 

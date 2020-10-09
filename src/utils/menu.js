@@ -23,6 +23,12 @@ const menu = [
         id: 4,
         children: []
     },
+    {
+        name: '数据库',
+        code: 'database',
+        id: 5,
+        children: []
+    }
 ]
 
 export default menu

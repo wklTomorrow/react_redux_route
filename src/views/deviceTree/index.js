@@ -77,7 +77,7 @@ class DeviceTree extends React.Component {
                 <button onClick={() => this.onPostOne()}>点我增加一个</button>
                 <button onClick={this.onGetAllFile.bind(this)}>获取文件</button>
                 <div style={{height: '400px', width: '400px'}} id='contain'></div>
-                <input ref={textInput}/>
+                {/* <input ref={textInput}/> */}
             </div>
         )
     }

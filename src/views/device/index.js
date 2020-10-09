@@ -21,7 +21,7 @@ const Device = function() {
     }
     useEffect(() => {
         // console.log(obj)
-        getData()
+        // getData()
         // console.log(objs, 111)
     }, [])
     useLayoutEffect(() => {
