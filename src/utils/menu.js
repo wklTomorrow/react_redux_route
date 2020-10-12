@@ -28,6 +28,12 @@ const menu = [
         code: 'database',
         id: 5,
         children: []
+    },
+    {
+        name: '服务端',
+        code: 'service',
+        id: 6,
+        children: []
     }
 ]
 

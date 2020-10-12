@@ -16,6 +16,7 @@ import Device from '@/views/device'
 import DeviceGroup from '@/views/deviceGroup'
 import DeviceTree from '@/views/deviceTree'
 import Database from '@/views/database'
+import Service from '@/views/service'
 import store from '@/reduxer'
 import { setDeviceTree } from '@/actions/systemInfo'
 const hashHistory = createHashHistory();
@@ -32,6 +33,7 @@ const FrontendAuth = () => {
                 <Route path="/DeviceGroup" exact component={DeviceGroup}></Route>
                 <Route path="/DeviceTree" exact component={DeviceTree}></Route>
                 <Route path="/Database" exact component={Database}></Route>
+                <Route path="/Service" exact component={Service}></Route>
                 <Redirect from={'/'} to={'/Device'}></Redirect>
                 {/* <Route path="/First" exact component={First}></Route> */}
                 {/* <Route path="/Second" exact component={Second}></Route> */}

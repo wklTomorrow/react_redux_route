@@ -25,6 +25,9 @@ let obj = {
     },
     onDeleteOneById(id) {
         return api.delete(`${url.API_URL}getNames?id=${id}`)
+    },
+    onGetFirstTag() {
+        return api.get(`/index`)
     }
 }
 
